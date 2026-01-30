@@ -1,8 +1,10 @@
     import React, { useState } from 'react';
+    import { Link, useLocation } from 'react-router-dom'; // Importando o Link e useLocation
     import './Header.css';
     import { 
     LayoutDashboard, CloudSun, Dog, Wallet, 
-    Package, Calendar, Tractor, Settings, LogOut, Menu, X 
+    Package, Calendar, Tractor, Settings, LogOut, Menu, X,
+    Pill 
     } from 'lucide-react';
 
     interface HeaderProps {
@@ -11,12 +13,16 @@
 
     const Header: React.FC<HeaderProps> = ({ onToggle }) => {
     const [isOpen, setIsOpen] = useState(true);
+    const location = useLocation(); // Para identificar qual link está ativo
 
     const handleToggle = () => {
         const newState = !isOpen;
         setIsOpen(newState);
-        onToggle(newState); // Notifica o App.tsx para ajustar a margem do conteúdo
+        onToggle(newState);
     };
+
+    // Função auxiliar para verificar se a rota está ativa
+    const isActive = (path: string) => location.pathname === path ? 'active' : '';
 
     return (
         <aside className={`sidebar-fixed ${isOpen ? 'open' : 'closed'}`}>
@@ -33,42 +39,52 @@
         </div>
 
         <nav className="sidebar-nav">
-            <a href="#" className="nav-link active">
+            {/* Substituído <a> por <Link> e href por to */}
+            <Link to="/" className={`nav-link ${isActive('/')}`}>
             <LayoutDashboard size={20}/> 
             {isOpen && <span>Home</span>}
-            </a>
-            <a href="#" className="nav-link">
-            <CloudSun size={20}/> 
-            {isOpen && <span>Clima</span>}
-            </a>
-            <a href="#" className="nav-link">
+            </Link>
+            
+            <Link to="/rebanho" className={`nav-link ${isActive('/rebanho')}`}>
             <Dog size={20}/> 
             {isOpen && <span>Rebanho</span>}
-            </a>
-            <a href="#" className="nav-link">
+            </Link>
+
+            <Link to="/clima" className={`nav-link ${isActive('/clima')}`}>
+            <CloudSun size={20}/> 
+            {isOpen && <span>Clima</span>}
+            </Link>
+
+            <Link to="/financeiro" className={`nav-link ${isActive('/financeiro')}`}>
             <Wallet size={20}/> 
             {isOpen && <span>Financeiro</span>}
-            </a>
-            <a href="#" className="nav-link">
+            </Link>
+
+            <Link to="/inventario" className={`nav-link ${isActive('/inventario')}`}>
             <Package size={20}/> 
             {isOpen && <span>Inventário</span>}
-            </a>
-            <a href="#" className="nav-link">
+            </Link>
+
+            <Link to="/agenda" className={`nav-link ${isActive('/agenda')}`}>
             <Calendar size={20}/> 
             {isOpen && <span>Agenda</span>}
-            </a>
+            </Link>
+
+            <Link to="/cuidados" className={`nav-link ${isActive('/cuidados')}`}>
+            <Pill size={20}/> 
+            {isOpen && <span>Cuidados</span>}
+            </Link>
         </nav>
 
-        {/* Seção inferior empurrada para cima do footer principal */}
         <div className="sidebar-footer">
-            <a href="#" className="nav-link">
+            <Link to="/ajustes" className={`nav-link ${isActive('/ajustes')}`}>
             <Settings size={20}/> 
             {isOpen && <span>Ajustes</span>}
-            </a>
-            <a href="#" className="nav-link logout">
+            </Link>
+            <Link to="/login" className="nav-link logout">
             <LogOut size={20}/> 
             {isOpen && <span>Sair</span>}
-            </a>
+            </Link>
         </div>
         </aside>
     );

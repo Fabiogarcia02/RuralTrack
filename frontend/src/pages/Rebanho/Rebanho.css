@@ -1,0 +1,231 @@
+        /* CONTAINER PRINCIPAL */
+        .rebanho-container {
+        padding: 30px;
+        background: #f8fafc;
+        min-height: 100vh;
+        }
+
+        .rebanho-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        }
+
+        .title-area h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #0f172a;
+        }
+
+        .btn-main-add {
+        background: #A3E635;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 15px rgba(163, 230, 53, 0.3);
+        }
+
+        /* CARDS DE ESTATÍSTICAS */
+        .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+        }
+
+        .stat-card {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .icon-box {
+        width: 55px;
+        height: 55px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .icon-box.green { background: #f0fdf4; color: #16a34a; }
+        .icon-box.yellow { background: #fffbeb; color: #d97706; }
+        .icon-box.blue { background: #eff6ff; color: #2563eb; }
+
+        /* FILTROS */
+        .filter-bar {
+        background: white;
+        padding: 18px 25px;
+        border-radius: 18px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        }
+
+        .filter-buttons {
+        display: flex;
+        gap: 12px;
+        }
+
+        .filter-buttons button {
+        background: #f1f5f9;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+        }
+
+        .filter-buttons button.active {
+        background: #A3E635;
+        color: #000;
+        }
+
+        /* MODAL DE CADASTRO */
+        .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        }
+
+        .modal-content {
+        background: white;
+        width: 95%;
+        max-width: 750px;
+        padding: 40px;
+        border-radius: 32px;
+        }
+
+        .modal-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        }
+
+        /* SELETOR DE ANIMAL */
+        .animal-selector {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 35px;
+        }
+
+        .type-option {
+        border: 2px solid #f1f5f9;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+        }
+
+        .type-option.active {
+        border-color: #A3E635;
+        background: #f7fee7;
+        }
+
+       
+        .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;               
+        row-gap: 25px;                  
+        }
+
+        .input-group label {
+        display: block;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: #475569;
+        margin-bottom: 10px;
+ 
+        }
+
+        .input-group input, 
+        .input-group select {
+        width: 100%;
+        padding: 11px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        background: #f8fafc;
+        font-size: 1rem;
+        
+        
+        }
+
+        /* RODAPÉ DO MODAL */
+        .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-top: 45px;
+        padding-top: 25px;
+        border-top: 1px solid #f1f5f9;
+        }
+
+        .btn-save {
+        background: #A3E635;
+        border: none;
+        padding: 15px 35px;
+        border-radius: 14px;
+        font-weight: 800;
+        cursor: pointer;
+        }
+
+        .btn-cancel {
+        background: #f1f5f9;
+        border: none;
+        padding: 15px 35px;
+        border-radius: 14px;
+        font-weight: 700;
+        color: #64748b;
+        cursor: pointer;
+        }
+
+        /* LISTAGEM DE CARDS */
+        .animals-display-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 25px;
+        }
+
+        .animal-display-card {
+        background: white;
+        padding: 25px;
+        border-radius: 26px;
+        border: 1px solid #f1f5f9;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .category-tag {
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding: 5px 14px;
+        border-radius: 50px;
+        }
+
+        .category-tag.leite { background: #dbeafe; color: #1e40af; }
+        .category-tag.corte { background: #fee2e2; color: #b91c1c; }
+        .category-tag.producao { background: #fef3c7; color: #92400e; }
+
+        .empty-state {
+        text-align: center;
+        padding: 120px 20px;
+        }
