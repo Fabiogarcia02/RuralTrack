@@ -1,0 +1,85 @@
+    .sidebar-fixed {
+    height: 100vh;
+    background-color: #000000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    overflow: hidden;
+    border-right: 1px solid #1a1a1a;
+    }
+
+    .sidebar-fixed.open { width: 260px; }
+    .sidebar-fixed.closed { width: 80px; }
+
+    .sidebar-header {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 90px;
+    }
+
+    .sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    }
+
+    .toggle-btn {
+    background: transparent;
+    border: none;
+    color: #A3E635;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .sidebar-nav {
+    flex: 1;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    }
+
+    .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 18px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.2s;
+    font-size: 0.95rem;
+    }
+
+    .sidebar-fixed.closed .nav-link {
+    justify-content: center;
+    padding: 15px 0;
+    }
+
+    .nav-link:hover, .nav-link.active {
+    background-color: #1a1a1a;
+    color: #A3E635;
+    }
+
+    .sidebar-footer {
+    padding: 20px 15px 30px 15px; /* Subimos um pouco para não bater no footer */
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    }

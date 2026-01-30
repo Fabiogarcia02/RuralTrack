@@ -1,0 +1,66 @@
+.app-layout {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease; /* Sincroniza com a Sidebar */
+  min-width: 0;
+}
+
+.sidebar-open {
+  margin-left: 260px; /* Largura total da sidebar */
+}
+
+.sidebar-collapsed {
+  margin-left: 80px; /* Largura apenas dos ícones */
+}
+
+.page-body {
+  flex: 1; /* Empurra o footer para baixo */
+  padding: 40px; /* Espaço para os cards da Home */
+  width: 100%;
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Remove o scroll horizontal indesejado */
+}
+
+.app-layout {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1; /* Ocupa todo o resto da tela */
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease; /* Para acompanhar o sanduíche */
+  background-color: #F8FAFC; 
+  min-width: 0;
+}
+
+/* Quando aberta, empurra o conteúdo em 260px */
+.sidebar-open {
+  margin-left: 260px;
+}
+
+/* Quando fechada, empurra apenas 80px */
+.sidebar-collapsed {
+  margin-left: 80px;
+}
+
+.page-body {
+  flex: 1;
+  padding: 40px; /* Respiro apenas para os cards, o footer fica fora */
+  width: 100%;
+  box-sizing: border-box;
+}

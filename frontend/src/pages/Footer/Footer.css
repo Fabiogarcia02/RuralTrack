@@ -1,0 +1,110 @@
+    /* Footer.css */
+
+    .footer-dark {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4rem 2rem 2rem 2rem; /* Aumentado o respiro superior */
+    border-top: 1px solid #1a1a1a;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o wrapper interno */
+    }
+
+    .footer-content-wrapper {
+    /* Reduzido a largura máxima e centralizado */
+    max-width: 1100px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    }
+
+    .footer-brand-section {
+    flex: 1; /* Permite que a seção de marca cresça proporcionalmente */
+    max-width: 350px;
+    }
+
+    .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    }
+
+    .brand-logo h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    }
+
+    .footer-brand-section p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    }
+
+    .social-icons-row {
+    display: flex;
+    gap: 18px;
+    margin-top: 1.5rem;
+    color: #A3E635;
+    }
+
+    .footer-nav-groups {
+    display: flex;
+    gap: 6rem; /* Espaço generoso entre colunas */
+    }
+
+    .nav-group h4 {
+    color: #A3E635;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    }
+
+    .nav-group a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    transition: color 0.2s ease;
+    }
+
+    .nav-group a:hover {
+    color: #ffffff;
+    }
+
+    .footer-bottom-bar {
+    max-width: 1100px; /* Mesma largura do wrapper para manter o alinhamento */
+    width: 100%;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #64748b;
+    }
+
+    .security-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid #A3E635;
+    color: #A3E635;
+    font-weight: 700;
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    }
