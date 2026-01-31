@@ -1,0 +1,260 @@
+        /* ============================================================
+        1. LAYOUT GERAL
+        ============================================================ */
+        .inventario-container {
+        padding: 30px;
+        background: #f8fafc;
+        min-height: 100vh;
+        font-family: 'Inter', sans-serif;
+        }
+
+        .inventario-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        }
+
+        .inventario-header h1 {
+        color: #5f920c;
+        font-weight: 800;
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        }
+
+        .inventario-header p {
+        color: #64748b;
+        font-size: 0.9rem;
+        }
+
+        /* ============================================================
+        2. NAVEGAÇÃO (TABS)
+        ============================================================ */
+        .inventario-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #e2e8f0;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        }
+
+        .inventario-tabs button {
+        padding: 14px 20px;
+        border: none;
+        background: none;
+        color: #64748b;
+        cursor: pointer;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        }
+ 
+        .inventario-tabs button.active {
+         color: #16a34a;
+        border-bottom: 3px solid #A3E635;
+        }
+
+        /* ============================================================
+        3. GRID E CARDS DE INVENTÁRIO
+        ============================================================ */
+        .inventario-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
+        }
+
+        .inventory-card {
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease;
+        border-left: 6px solid #cbd5e1;
+        }
+
+        .inventory-card:hover {
+        transform: translateY(-5px);
+        }
+
+        /* Cores Laterais por Categoria */
+        .inventory-card.graos { border-left-color: #f59e0b; }
+        .inventory-card.maquinas { border-left-color: #3b82f6; }
+        .inventory-card.plantio { border-left-color: #22c55e; }
+        .inventory-card.medicamentos { border-left-color: #ef4444; }
+
+        .card-icon {
+        font-size: 2rem;
+        background: #f1f5f9;
+        padding: 12px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .card-content h3 {
+        font-size: 1.1rem;
+        color: #1e293b;
+        margin: 0 0 4px 0;
+        }
+
+        .quantity {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #A3E635;
+        margin: 0;
+        }
+
+        .extra-info {
+        font-size: 0.8rem;
+        color: #64748b;
+        margin-top: 5px;
+        }
+
+        /* ============================================================
+        4. BOTÕES E AÇÕES
+        ============================================================ */
+        .btn-add-item {
+       background-color: #A3E635;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
+        }
+
+        .btn-delete {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #fee2e2;
+        color: #ef4444;
+        border: none;
+        padding: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+        }
+
+        .btn-delete:hover {
+        background: #fecaca;
+        }
+
+        /* ============================================================
+        5. MODAL E FORMULÁRIO
+        ============================================================ */
+        .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+        background: white;
+        width: 90%;
+        max-width: 650px;
+        padding: 30px;
+        border-radius: 24px;
+        max-height: 90vh;
+        overflow-y: auto;
+        }
+
+        .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        }
+
+        .input-group.full {
+        grid-column: span 2;
+        }
+
+        .input-group label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #334155;
+        margin-bottom: 8px;
+        }
+
+        .input-group input, 
+        .input-group select {
+        width: 100%;
+        padding: 7px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        outline: none;
+        }
+
+        .input-group input:focus {
+        background: #A3E635;
+        }
+
+        /* ============================================================
+        6. SELETOR DE CULTURAS (DENTRO DO MODAL)
+        ============================================================ */
+        .cultura-selector-container {
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        border: 1px solid #e2e8f0;
+        }
+
+        .selector-grid-expandido {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+        max-height: 180px;
+        overflow-y: auto;
+        padding: 5px;
+        }
+
+        .option-plantio {
+        background: white;
+        border: 2px solid #e2e8f0;
+        padding: 10px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        font-size: 0.7rem;
+        position: relative;
+        }
+
+        .option-plantio.active {
+        background: #A3E635;
+        colOR: #f0fdf4;
+        }
+
+        .emoji-icon { font-size: 1.5rem; }
+
+        .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 30px;
+        }
+
+        .btn-save {  background: #A3E635; color:  black; border: none; padding: 14px 25px; border-radius: 12px; font-weight: bold; cursor: pointer; }
+        .btn-cancel { background: #f1f5f9; color: #64748b; border: none; padding: 14px 25px; border-radius: 12px; font-weight: bold; cursor: pointer; }

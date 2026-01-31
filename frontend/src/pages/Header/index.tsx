@@ -50,19 +50,14 @@
             {isOpen && <span>Rebanho</span>}
             </Link>
 
-            <Link to="/clima" className={`nav-link ${isActive('/clima')}`}>
-            <CloudSun size={20}/> 
-            {isOpen && <span>Clima</span>}
-            </Link>
-
-            <Link to="/financeiro" className={`nav-link ${isActive('/financeiro')}`}>
-            <Wallet size={20}/> 
-            {isOpen && <span>Financeiro</span>}
-            </Link>
-
-            <Link to="/inventario" className={`nav-link ${isActive('/inventario')}`}>
+             <Link to="/inventario" className={`nav-link ${isActive('/inventario')}`}>
             <Package size={20}/> 
             {isOpen && <span>Inventário</span>}
+            </Link>
+
+            <Link to="/cuidados" className={`nav-link ${isActive('/cuidados')}`}>
+            <Pill size={20}/> 
+            {isOpen && <span>Cuidados</span>}
             </Link>
 
             <Link to="/agenda" className={`nav-link ${isActive('/agenda')}`}>
@@ -70,10 +65,19 @@
             {isOpen && <span>Agenda</span>}
             </Link>
 
-            <Link to="/cuidados" className={`nav-link ${isActive('/cuidados')}`}>
-            <Pill size={20}/> 
-            {isOpen && <span>Cuidados</span>}
+             <Link to="/financeiro" className={`nav-link ${isActive('/financeiro')}`}>
+            <Wallet size={20}/> 
+            {isOpen && <span>Financeiro</span>}
             </Link>
+ 
+            <Link to="/clima" className={`nav-link ${isActive('/clima')}`}>
+            <CloudSun size={20}/> 
+            {isOpen && <span>Clima</span>}
+            </Link>
+
+           
+
+           
         </nav>
 
         <div className="sidebar-footer">

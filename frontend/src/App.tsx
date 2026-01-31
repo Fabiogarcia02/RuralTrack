@@ -5,6 +5,9 @@
     import Footer from './pages/Footer';
     import Rebanho from './pages/Rebanho';
     import './App.css';
+    import Inventario from './pages/Inventario';
+    import Login from './pages/Login';
+    import Cuidados from './pages/Cuidados';
 
     function App() {
       const [sidebarOpen, setSidebarOpen] = React.useState(true);
@@ -19,6 +22,10 @@
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/rebanho" element={<Rebanho />} />
+                <Route path="/inventario" element={<Inventario />} />
+                <Route path='/Login' element={<Login />} />
+                <Route path="/Cuidados" element={<Cuidados />} />
+
                 {/* Se quiser que outras páginas funcionem, adicione as rotas aqui */}
               </Routes>
             </div>
