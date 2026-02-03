@@ -10,6 +10,8 @@
     import Cuidados from './pages/Cuidados';
     import Financeiro from './pages/Financeiro';
     import Clima from './pages/Clima'; 
+    import Calendario from './pages/Calendario';
+    
 
     function App() {
       const [sidebarOpen, setSidebarOpen] = React.useState(true);
@@ -29,6 +31,7 @@
                 <Route path="/Cuidados" element={<Cuidados />} />
                 <Route path="/Financeiro" element={<Financeiro />} />
                 <Route path="/Clima" element={<Clima />} />
+                <Route path="/Calendario" element={<Calendario />} />
 
                 {/* Se quiser que outras páginas funcionem, adicione as rotas aqui */}
               </Routes>

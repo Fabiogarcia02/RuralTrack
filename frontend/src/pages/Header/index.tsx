@@ -60,7 +60,7 @@
             {isOpen && <span>Cuidados</span>}
             </Link>
 
-            <Link to="/agenda" className={`nav-link ${isActive('/agenda')}`}>
+            <Link to="/calendario" className={`nav-link ${isActive('/calendario')}`}>
             <Calendar size={20}/> 
             {isOpen && <span>Agenda</span>}
             </Link>
