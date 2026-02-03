@@ -1,5 +1,5 @@
     import React from 'react';
-    import { Routes, Route } from 'react-router-dom'; // ADICIONE ESTE IMPORT
+    import { Routes, Route } from 'react-router-dom'; 
     import Header from './pages/Header'; 
     import Home from './pages/Home';
     import Footer from './pages/Footer';
@@ -8,6 +8,8 @@
     import Inventario from './pages/Inventario';
     import Login from './pages/Login';
     import Cuidados from './pages/Cuidados';
+    import Financeiro from './pages/Financeiro';
+    import Clima from './pages/Clima'; 
 
     function App() {
       const [sidebarOpen, setSidebarOpen] = React.useState(true);
@@ -25,6 +27,8 @@
                 <Route path="/inventario" element={<Inventario />} />
                 <Route path='/Login' element={<Login />} />
                 <Route path="/Cuidados" element={<Cuidados />} />
+                <Route path="/Financeiro" element={<Financeiro />} />
+                <Route path="/Clima" element={<Clima />} />
 
                 {/* Se quiser que outras páginas funcionem, adicione as rotas aqui */}
               </Routes>

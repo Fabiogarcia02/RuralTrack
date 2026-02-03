@@ -1,0 +1,258 @@
+        /* ============================================================
+        ESTILOS GERAIS DA PÁGINA
+        ============================================================ */
+        .clima-page {
+            padding: 30px;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+        }
+
+        /* --- Banner Superior (Estação e Busca) --- */
+        .season-banner {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-left: 8px solid #A3E635; /* A cor muda via JS/Estação */
+        }
+
+        .season-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .season-info h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .season-info p {
+            margin: 2px 0 0 0;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* --- Container de Busca e Auto-complete --- */
+        .search-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-mini {
+            display: flex;
+            align-items: center;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 16px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+
+        .search-mini:focus-within {
+            border-color: #A3E635;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.1);
+        }
+
+        .search-mini input {
+            border: none;
+            background: transparent;
+            padding: 8px 10px;
+            font-size: 0.95rem;
+            outline: none;
+            width: 200px;
+            font-weight: 500;
+        }
+
+        .search-mini button {
+            background: #A3E635;
+            color: #1a2e05;
+            border: none;
+            padding: 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .search-mini button:hover {
+            transform: scale(1.05);
+            background: #bef264;
+        }
+
+        .search-mini button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* --- Grid Principal --- */
+        .clima-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 30px;
+        }
+
+        /* --- Card de Destaque (Clima Atual) --- */
+        .weather-focus-card {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 32px;
+            margin-bottom: 25px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-previsao {
+            opacity: 0.6;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+        }
+
+        .weather-focus-card h2 {
+            font-size: 2rem;
+            margin: 8px 0;
+        }
+
+        .big-temp {
+            font-size: 5.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+            line-height: 1;
+        }
+
+        .weather-details {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+
+        /* --- Seletor Semanal --- */
+        .weekly-selector {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .day-btn {
+            background: #ffffff;
+            border: 2px solid transparent;
+            padding: 20px 10px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .day-btn:hover {
+            transform: translateY(-4px);
+            border-color: #e2e8f0;
+        }
+
+        .day-btn.active {
+            border-color: #A3E635;
+            background: #f7fee7;
+            box-shadow: 0 10px 15px -3px rgba(163, 230, 53, 0.15);
+        }
+
+        .day-btn small {
+            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+        }
+
+        .day-btn strong {
+            font-size: 1.2rem;
+            color: #1e293b;
+        }
+
+        /* --- Sidebar Advisor --- */
+        .advisor-card {
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 28px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+        }
+
+        .advisor-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .advisor-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+
+        .status-box {
+            margin-top: 15px;
+            padding: 20px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .status-box.success {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #dcfce7;
+        }
+
+        .status-box.warning {
+            background: #fffbeb;
+            color: #92400e;
+            border: 1px solid #fef3c7;
+        }
+
+        /* --- Animações --- */
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 1024px) {
+            .clima-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .season-banner { flex-direction: column; gap: 20px; align-items: flex-start; }
+            .search-mini { width: 100%; }
+            .search-mini input { width: 100%; }
+            .weekly-selector { grid-template-columns: repeat(3, 1fr); }
+        }
