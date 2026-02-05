@@ -1,168 +1,196 @@
-            /* Fundo da Página com a imagem da plantação */
-            .login-page {
-            height: 100vh;
-            width: 100%;
+                    /* Fundo da Página com a imagem da plantação */
+                    .login-page {
+                    height: 100vh;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                                url('https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                    background-size: cover;
+                    background-position: center;
+                    font-family: 'Inter', sans-serif;
+                    }
+
+                    /* O Container de Vidro (Glassmorphism) */
+                    .glass-container {
+                    background: rgba(20, 20, 20, 0.6);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    padding: 50px 40px;
+                    border-radius: 40px;
+                    width: 100%;
+                    max-width: 450px;
+                    border: 2px solid rgba(144, 238, 144, 0.3); 
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
+                    text-align: center;
+                    }
+
+                    /* Header e Logo */
+                    .login-header h1 {
+                    color: white;
+                    font-size: 2.2rem;
+                    margin-bottom: 5px;
+                    letter-spacing: -1px;
+                    }
+
+                    .login-header h1 span {
+                    color: #82ff3b; /* Verde limão da Rural Track */
+                    }
+
+                    .login-header p {
+                    color: #e2e8f0;
+                    font-size: 0.85rem;
+                    margin-bottom: 35px;
+                    opacity: 0.9;
+                    }
+
+                    .logo-icon {
+                    font-size: 2rem;
+                    margin-bottom: 10px;
+                    }
+
+                    /* Inputs Estilizados */
+                    .login-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    }
+
+                    .input-field {
+                    display: flex;
+                    align-items: center;
+                    background: #262626;
+                    border: 1px solid #4ade80; /* Borda verde neon */
+                    border-radius: 10px;
+                    padding: 12px 15px;
+                    gap: 12px;
+                    }
+
+                    .input-field input {
+                    background: transparent;
+                    border: none;
+                    color: white;
+                    width: 100%;
+                    outline: none;
+                    font-size: 1rem;
+                    }
+
+                    .input-field input::placeholder {
+                    color: #94a3b8;
+                    }
+
+                    .field-icon {
+                    color: #f1f5f9;
+                    }
+
+                    /* Opções de Login */
+                    .form-options {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: white;
+                    font-size: 0.85rem;
+                    margin: 10px 0 20px;
+                    }
+
+                    .remember-me {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    }
+
+                    .text-green { color: #82ff3b; }
+
+                    .forgot-password {
+                    color: white;
+                    text-decoration: none;
+                    }
+
+                    /* Botão Neon Verde */
+                    .btn-login {
+                    background: #82ff3b;
+                    color: #064e3b;
+                    border: none;
+                    padding: 15px;
+                    border-radius: 12px;
+                    font-weight: 900;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    box-shadow: 0 4px 15px rgba(130, 255, 59, 0.4);
+                    }
+
+                    .btn-login:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(130, 255, 59, 0.6);
+                    background: #9dff63;
+                    }
+
+                    /* Footer */
+                    .login-footer {
+                    margin-top: 30px;
+                    color: white;
+                    font-size: 0.85rem;
+                    }
+
+                    .login-footer a {
+                    color: #82ff3b;
+                    text-decoration: none;
+                    font-weight: bold;
+                    }
+
+                    .password-checker {
+                        text-align: left;
+                        margin: 5px 0 15px 5px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                    }
+
+                    .password-checker p {
+                    font-size: 0.75rem;
+                    color: #94a3b8; 
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    transition: 0.3s;
+                            }
+
+                    .password-checker p.valid {
+                        color: #82ff3b; 
+                        font-weight: bold;
+                    }
+
+                    .input-field input:focus {
+                    border-bottom: 1px solid #82ff3b; 
+                    }
+
+                    .password-field {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .password-field input {
+            padding-right: 45px; 
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #82ff3b;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            font-family: 'Inter', sans-serif;
-            }
+            transition: color 0.2s;
+            padding: 0;
+        }
 
-            /* O Container de Vidro (Glassmorphism) */
-            .glass-container {
-            background: rgba(20, 20, 20, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 50px 40px;
-            border-radius: 40px;
-            width: 100%;
-            max-width: 450px;
-            border: 2px solid rgba(144, 238, 144, 0.3); 
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05);
-            text-align: center;
-            }
-
-            /* Header e Logo */
-            .login-header h1 {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            letter-spacing: -1px;
-            }
-
-            .login-header h1 span {
-            color: #82ff3b; /* Verde limão da Rural Track */
-            }
-
-            .login-header p {
-            color: #e2e8f0;
-            font-size: 0.85rem;
-            margin-bottom: 35px;
-            opacity: 0.9;
-            }
-
-            .logo-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            }
-
-            /* Inputs Estilizados */
-            .login-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            }
-
-            .input-field {
-            display: flex;
-            align-items: center;
-            background: #262626;
-            border: 1px solid #4ade80; /* Borda verde neon */
-            border-radius: 10px;
-            padding: 12px 15px;
-            gap: 12px;
-            }
-
-            .input-field input {
-            background: transparent;
-            border: none;
-            color: white;
-            width: 100%;
-            outline: none;
-            font-size: 1rem;
-            }
-
-            .input-field input::placeholder {
-            color: #94a3b8;
-            }
-
-            .field-icon {
-            color: #f1f5f9;
-            }
-
-            /* Opções de Login */
-            .form-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            font-size: 0.85rem;
-            margin: 10px 0 20px;
-            }
-
-            .remember-me {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            }
-
-            .text-green { color: #82ff3b; }
-
-            .forgot-password {
-            color: white;
-            text-decoration: none;
-            }
-
-            /* Botão Neon Verde */
-            .btn-login {
-            background: #82ff3b;
-            color: #064e3b;
-            border: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-weight: 900;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(130, 255, 59, 0.4);
-            }
-
-            .btn-login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(130, 255, 59, 0.6);
-            background: #9dff63;
-            }
-
-            /* Footer */
-            .login-footer {
-            margin-top: 30px;
-            color: white;
-            font-size: 0.85rem;
-            }
-
-            .login-footer a {
-            color: #82ff3b;
-            text-decoration: none;
-            font-weight: bold;
-            }
-
-            .password-checker {
-                 text-align: left;
-                 margin: 5px 0 15px 5px;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .password-checker p {
-               font-size: 0.75rem;
-               color: #94a3b8; 
-              display: flex;
-             align-items: center;
-             gap: 6px;
-              transition: 0.3s;
-                    }
-
-            .password-checker p.valid {
-                color: #82ff3b; 
-                font-weight: bold;
-            }
-
-            .input-field input:focus {
-            border-bottom: 1px solid #82ff3b; 
-            }
+        .toggle-password:hover {
+            color: #333;
+        }
