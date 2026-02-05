@@ -15,6 +15,7 @@
     .sidebar-fixed.open { width: 260px; }
     .sidebar-fixed.closed { width: 80px; }
 
+    /* HEADER */
     .sidebar-header {
     padding: 25px;
     display: flex;
@@ -42,10 +43,98 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s;
-    margin-left: auto;
-    margin-right: auto;
     }
 
+    /* SEÇÃO DE PERFIL / USUÁRIO */
+    .user-section-container {
+    padding: 0 15px;
+    margin-bottom: 15px;
+    }
+
+    .user-profile-dropdown {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .user-profile-dropdown.expanded {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(163, 230, 53, 0.3);
+    }
+
+    .user-trigger {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    }
+
+    .user-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .avatar-mini {
+    width: 32px;
+    height: 32px;
+    background: #A3E635;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    }
+
+    .arrow { transition: transform 0.3s ease; opacity: 0.6; }
+    .arrow.rotate { transform: rotate(180deg); }
+
+    /* SUBMENU DO PERFIL */
+    .user-submenu {
+    padding: 5px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: slideDown 0.2s ease-out;
+    }
+
+    .submenu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 13px;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+    background: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    }
+
+    .submenu-item:hover {
+    background: rgba(163, 230, 53, 0.1);
+    color: #A3E635;
+    }
+
+    .submenu-item.logout:hover {
+    background: rgba(255, 77, 77, 0.15);
+    color: #ff4d4d;
+    }
+
+    /* NAVEGAÇÃO PRINCIPAL */
     .sidebar-nav {
     flex: 1;
     padding: 10px 15px;
@@ -76,30 +165,25 @@
     color: #A3E635;
     }
 
+    /* RODAPÉ */
     .sidebar-footer {
-    padding: 20px 15px 30px 15px; /* Subimos um pouco para não bater no footer */
+    padding: 20px 15px;
     border-top: 1px solid #1a1a1a;
     display: flex;
     flex-direction: column;
     gap: 5px;
     }
 
-    .user-info-sidebar {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 10px;
-}
+    .user-info-sidebar.guest {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #64748b;
+    font-size: 14px;
+    }
 
-.logout-btn {
-  color: #ff4d4d !important;
-  transition: 0.3s;
-}
-
-.logout-btn:hover {
-  background: rgba(255, 77, 77, 0.1) !important;
-}
+    @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
